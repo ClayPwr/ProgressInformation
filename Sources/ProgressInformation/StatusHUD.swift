@@ -60,3 +60,15 @@ public struct StatusHUD<Presenting>: View where Presenting: View {
       }
   }
 }
+
+extension View {
+  public func statusHUD(
+    isShowing: Binding<Bool>,
+    status: HUDStatusProtocol,
+    blurBackground: Bool = true) -> some View {
+      StatusHUD(isShowing: isShowing,
+               blurBackground: blurBackground,
+               status: status,
+               presenting: { self })
+    }
+}

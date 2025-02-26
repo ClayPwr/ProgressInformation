@@ -57,3 +57,19 @@ public struct ProgressHUD<Presenting>: View where Presenting: View {
     }
   }
 }
+
+
+extension View {
+  public func progressHUD(isShowing: Binding<Bool>,
+                          type: ProgressHUDType = .default,
+                          text: Text,
+                          blurBackground: Bool = true,
+                          disableInteraction: Bool = true) -> some View {
+    ProgressHUD(isShowing: isShowing,
+                type: type,
+                text: text,
+                blurBackground: blurBackground,
+                disableInteraction: disableInteraction,
+                presenting: { self })
+  }
+}

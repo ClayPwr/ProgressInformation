@@ -14,6 +14,12 @@ extension UIScreen {
    static let screenSize = UIScreen.main.bounds.size
 }
 
+extension View {
+  func toastView(toast: Binding<Toast?>) -> some View {
+    self.modifier(ToastModifier(toast: toast))
+  }
+}
+
 struct ToastModifier: ViewModifier {
   
   @Binding var toast: Toast?
