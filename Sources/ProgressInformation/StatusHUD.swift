@@ -21,7 +21,7 @@ public protocol HUDStatusProtocol {
   var textDescription: Text? { get }
 }
 
-struct StatusHUD<Presenting>: View where Presenting: View {
+public struct StatusHUD<Presenting>: View where Presenting: View {
   /// Show Progress HUD
   @Binding var isShowing: Bool
   
@@ -34,7 +34,7 @@ struct StatusHUD<Presenting>: View where Presenting: View {
   /// The view that will be behind the ProgressHUD
   let presenting: () -> Presenting
   
-  var body: some View {
+  public var body: some View {
       
       ZStack(alignment: .center) {
         

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ErrorHUD<Presenting>: View where Presenting: View {
+public struct ErrorHUD<Presenting>: View where Presenting: View {
   /// Show Progress HUD
   @Binding var isShowing: Bool
   
@@ -24,7 +24,7 @@ struct ErrorHUD<Presenting>: View where Presenting: View {
   let delaySeconds: UInt64 = 2
   private let multiplayer: UInt64 = 1_000_000_000
   
-  var body: some View {
+  public var body: some View {
     
     GeometryReader { geometry in
       
