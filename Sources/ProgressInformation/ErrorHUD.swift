@@ -61,4 +61,14 @@ public struct ErrorHUD<Presenting>: View where Presenting: View {
   }
 }
 
-
+extension View {
+  public func errorHUD(
+    isShowing: Binding<Bool>,
+    text: Text,
+    blurBackground: Bool = true) -> some View {
+      ErrorHUD(isShowing: isShowing,
+               text: text,
+               blurBackground: blurBackground,
+               presenting: { self })
+    }
+}
